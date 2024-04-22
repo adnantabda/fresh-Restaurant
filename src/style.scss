@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+header {
+    width: 100vw;
+    background-color: #B80c92;
+    height: 48px;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+
+}
+
+h1{
+    color: #7065E4;
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+#content {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.lower-part-of-image{
+    margin: 0;
+    width: 80vw;
+    // height: 30vh;
+    background-color: #800080;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 8px 16px 8px 16px;
+}
+
+img{
+    width: 80vw;
+    // height: 70vh;
+    margin: 0;
+    height: 25vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    border-radius: 24px;
+    overflow: hidden;
+    // height: 232px;
+}
+
+.price-card{
+    border-radius: 12px;
+    // background-color: red;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 40vw ;
+    padding: 4px 6px 4px 6px;
+    
+}
+
+.food-price{
+    // padding: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.order-food{
+    padding: 6px 12px 6px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+}
+
+.food-detail{
+    color : whitesmoke;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.description{
+    font-style: italic;
+    font-size: 13px;
+}
+
+
+.header-container{
+    margin-top: 24px;
+}
+
+
+.food-slide{
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.menu-icon , .logo-icon  {
+    width: 50px;
+    height: 50px;
+}
+
+.magnify-icon , .ticket-icon , .heart-icon , .user-icon{
+
+    width: 40px;
+    height: 40px;
+}
+.logo-wrapper{
+    display: flex;
+    color: #DBFF00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.footer-nav{
+    background-color: #F7F7F7;
+    box-shadow: 0 1px 2px 1px gray;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 24px;
+    width: 100vw;
+    padding: 12px 6px 24px 6px;
+}
