@@ -24,11 +24,13 @@ h1{
     text-align: left;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 400;
+    font-size: 28px;
 }
 
 #content {
     width: 80vw;
     display: flex;
+    // visibility: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -38,8 +40,7 @@ h1{
 
 .lower-part-of-image{
     margin: 0;
-    width: 80vw;
-    // height: 30vh;
+    width: 369px;
     background-color: #800080;
     display: flex;
     flex-direction: row;
@@ -47,15 +48,57 @@ h1{
     padding: 8px 16px 8px 16px;
 }
 
+.nav{
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    width: 100vw;
+    opacity: 0.98;
+    visibility: hidden;
+
+    .nav-buttons{
+        display: flex;
+        gap: 24px;
+        // flex-flow: column wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 100vh;
+        background-color: #800080;
+        padding-right: 1rem;
+        transform: translateY(-100%);
+    }
+
+    button{
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        font-size: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        color: whitesmoke;
+    }
+
+    button:hover{
+        color: #DBFF00;
+        cursor: pointer;
+    }
+
+}
+
+
 img{
-    width: 80vw;
-    // height: 70vh;
+    width: 369px;
+    height: 70vh;
     margin: 0;
     height: 25vh;
 }
 
-.container{
-    display: flex;
+.menu{
+    // display: flex;
+    // visibility: hidden;
+    display: none;
     flex-direction: column;
     margin-top: 18px;
     border-radius: 24px;
@@ -72,7 +115,7 @@ img{
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
-    width: 40vw ;
+    width: 180px ;
     padding: 4px 6px 4px 6px;
     
 }
@@ -94,6 +137,7 @@ img{
 .food-detail{
     color : whitesmoke;
     font-weight: 600;
+    // font-size: 1rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -109,7 +153,7 @@ img{
 
 
 .food-slide{
-    width: 80vw;
+    // width: 80vw;
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -141,4 +185,146 @@ img{
     gap: 24px;
     width: 100vw;
     padding: 12px 6px 24px 6px;
+}
+
+// .open{
+//     visibility: hidden;
+// }
+
+.burger-container{
+    background-color: rgba(44, 21, 21, 0.099);
+    border-radius: 24px 24px 0 0;
+    display: grid;
+    // flex-direction: column;
+    grid-template-columns: 1fr;
+    // justify-content: center;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 1px  20px 1px rgba(128, 128, 128, 0.212);
+    height: 70vh;
+
+    h3{
+        color: #CC00FF;
+        margin: 24px;
+    }
+
+    img{
+        height: auto;
+        margin-bottom: 0;
+    }
+}
+
+.list{
+    list-style-type: none;
+    color: #1E511E;
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+@mixin media-md {
+    @media screen and (min-width: 724px){
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1380px){
+        @content;
+    }
+}
+
+
+@mixin media-xl {
+    @media screen and (min-width: 1900px){
+        @content;
+    }
+}
+
+
+@include media-md{
+
+    img{
+        width: 300px;
+        height: 70vh;
+        margin: 0;
+        height: 25vh;
+    }
+
+    .lower-part-of-image{
+        margin: 0;
+        width: 300px;
+        background-color: #800080;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 8px 16px 8px 16px;
+    }
+
+    .food-slide{
+        // width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .burger-container{
+        grid-template-columns:1fr;
+        width: 80vw;
+    }
+
+    .burger-image{
+        align-self: center;
+        justify-self: center;
+    }
+
+
+
+}
+
+
+
+@include media-lg{
+    .food-slide{
+        // width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+    }
+
+
+    img{
+        width: 369px;
+    }
+
+    .lower-part-of-image{
+        margin: 0;
+        width: 368px;
+    }
+
+    .footer-nav{
+        display: none;
+    }
+
+}
+
+@include media-xl{
+    .food-slide{
+        // width: 80vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .footer-nav{
+        display: none;
+    }
+
+
+
+}
+
+
+.home{
+    // display: none;
+    margin-top: 12px;
 }
