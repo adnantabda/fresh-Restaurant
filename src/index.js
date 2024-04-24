@@ -10,13 +10,38 @@ import userIcon1 from './imgs/user.svg'
 import heartIcon1 from './imgs/heart.svg'
 import magnifyIcon1 from './imgs/magnify.svg'
 import ticketIcon1 from './imgs/ticket.svg'
+import {home} from './home.js'
+// import { container } from 'webpack'
 
 // import { ContextReplacementPlugin } from 'webpack'
+
+let visibleNav = true
+let inHome = false
+let inMenu = true
+
+
+
+const nav = document.querySelector(".nav")
+
+// if (!visibleNav){
+//     nav.style.visibility = "visible"
+//     visibleNav = true
+
+// }
+// else{
+//     nav.style.visibility = "none"
+//     visibleNav = false
+// }
+
 
 const header = ()=>{
     const headerSelect = document.querySelector("header")
     const logoWrapper = document.createElement("div")
+    const homeBtn = document.querySelector(".home-btn")
+    const menuBtn = document.querySelector(".menu-btn")
     const pageCat = document.createElement("h2")
+    // const nav = document.querySelector(".nav")
+    const button = document.querySelectorAll("button")
     pageCat.textContent = "MENU"
     logoWrapper.classList.add("logo-wrapper")
     
@@ -33,6 +58,38 @@ const header = ()=>{
     
     headerSelect.appendChild(logoWrapper)
     headerSelect.appendChild(svg1)
+
+    svg1.addEventListener("mouseenter" , ()=>{
+        svg1.style.cursor ="pointer"
+    })
+
+    svg1.addEventListener('click' , ()=>{
+        if (!visibleNav){
+            nav.style.visibility = "visible"
+            visibleNav = true
+
+
+            homeBtn.addEventListener("click" , ()=> 
+            {
+                pageCat.textContent = "HOME"
+                home();
+                nav.style.visibility = "hidden"
+
+            })
+
+            menuBtn.addEventListener("click" , ()=>{
+                pageCat.textContent = "MENU"
+                contentCreate()
+                // foodDescription()
+                nav.style.visibility = "hidden"
+            })
+        
+        }
+        else{ 
+            nav.style.visibility = "hidden"
+            visibleNav = false
+        }
+    })
     
 }
 
@@ -41,11 +98,10 @@ header()
 const foodDescription = (image)=> {
 
     const container = document.createElement("div")
-    container.classList.add("container")
-
+    container.classList.add("menu")
+    container.style.display = "flex"
     const foodImage = new Image()
     foodImage.src =  image
-
     const lowerPartOfImage = document.createElement("div")
     lowerPartOfImage.classList.add("lower-part-of-image")
     const priceCard = document.createElement("div")
@@ -83,6 +139,9 @@ const foodDescription = (image)=> {
 
 const contentCreate = () =>{
     const content = document.querySelector("#content")
+    while (content.firstChild){
+        content.removeChild(content.firstChild)
+    }
     const header = document.createElement("h1")
     const description = document.createElement("p")
     const headerContainer = document.createElement("div")
@@ -111,6 +170,13 @@ const contentCreate = () =>{
     foodSlide.appendChild(foodDescription(Image3))
     foodSlide.appendChild(foodDescription(Image4))
     foodSlide.appendChild(foodDescription(Image5))
+    foodSlide.appendChild(foodDescription(Image1))
+    foodSlide.appendChild(foodDescription(Image4))
+    foodSlide.appendChild(foodDescription(Image2))
+    foodSlide.appendChild(foodDescription(Image5))
+    foodSlide.appendChild(foodDescription(Image3))
+    foodSlide.appendChild(foodDescription(Image4))
+    foodSlide.appendChild(foodDescription(Image1))
     
     content.appendChild(foodSlide)
 
@@ -145,6 +211,6 @@ const footerContainer = ()=>{
     
 
 }
-
 contentCreate()
+// home();
 footerContainer()
